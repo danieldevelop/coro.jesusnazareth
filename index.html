@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="shortcut icon" href="./assets/img/logo.jpg" type="image/x-icon">
+    <title>Bitácora de Cantos - Jesus de Nazareth</title>
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <ul class="nav justify-content-center mt-3">
+<!--            <li class="nav-item"><a href="https://www.eucaristiadiaria.cl/calendario.php" class="nav-link active text-uppercase" target="_blank">Lecturas Eucaristía Diaria</a></li>-->
+            <li class="nav-item"><a href="#" class="nav-link active text-uppercase" data-toggle="modal" data-target="#mdlFechaEucaristia">Lecturas Eucaristía Diaria</a></li>
+        </ul>
+
+        <div class="p-3">
+            <img src="./assets/img/logo.jpg" alt="..." class="rounded mx-auto d-block img-fluid dg-logo">
+        </div>
+        <h1 class="text-center font-weight-normal h2 mb-4 text-uppercase">Bitácora de Cantos <small class="h5 text-muted text-capitalize">Capilla Jesus de Nazareth</small></h1>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <div class="d-flex justify-content-center align-items-center">
+            <form class="dg-formulario">
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+<!--                        <label for="slcTipoCancion">Tipo</label>-->
+                        <select name="slcTipoCancion" id="slcTipoCancion" class="form-control form-control-sm shadow-none">
+                            <option selected>Tipo de Canto...</option>
+                            <option value="entrada">Entrada</option>
+                            <option value="perdon">Perdon</option>
+                            <option value="gloria">Gloría</option>
+                            <option value="salmo">Antifona del Salmo</option>
+                            <option value="aleluya">Aleluya</option>
+                            <option value="desp-evangelio">Desp. Evangelio</option>
+                            <option value="ofertorio">Ofertorio</option>
+                            <option value="santo">Santo</option>
+                            <option value="cordero">Cordero</option>
+                            <option value="comunion">Comunión</option>
+                            <option value="reflexion">Reflexion</option>
+                            <option value="final-maria">Final/Maria</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-5">
+<!--                        <label for="inpCancion">Nombre de la Canción</label>-->
+                        <input type="text" name="inpCancion" id="inpCancion" class="form-control form-control-sm shadow-none" placeholder="Nombre de la Canción">
+                    </div>
+                    <div class="form-group col-md-2">
+<!--                        <label for="inpNumeroCancion">N° Canción</label>-->
+                        <input type="text" name="inpNumeroCancion" id="inpNumeroCancion" class="form-control form-control-sm shadow-none" placeholder="N° de la Canción">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <button type="button" class="btn btn-dark btn-sm btn-block" id="btnAddCancion">Agregar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <section id="tblCanciones">
+            <div class="table-responsive p-3">
+                <table class="table table-bordered table-hover table-sm mb-3" id="tblListaCanciones">
+                    <thead class="thead-dark">
+                        <tr class="text-center">
+                            <th class="font-weight-normal" scope="col">#</th>
+                            <th class="font-weight-normal" scope="col">Tipo</th>
+                            <th class="font-weight-normal" scope="col">Nombre</th>
+                            <th class="font-weight-normal" scope="col">Número</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+<!--                        Se agrega dinamicamente por medio de JS-->
+                    </tbody>
+                </table>
+            </div>
+
+            <button type="button" class="btn btn-info btn-sm btn-block text-uppercase dg-btn-download" onclick="downloadPDF()">Descargar PDF</button>
+        </section>
+    </div>
+</main>
+
+
+<!--Ventana modal para ingresar fecha de lecturas eucaristicas-->
+<div class="modal fade" id="mdlFechaEucaristia" tabindex="-1" aria-labelledby="mdlFechaEucaristiaLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="width: 350px; margin: 0 auto;">
+        <div class="modal-content">
+            <div class="modal-body">
+                <label for="url-fecha" class="form-label"><strong>INGRESE FECHA</strong></label>
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inp-url-fecha"><img src="./assets/img/search.svg" alt="..."></span>
+                    <input type="date" id="url-fecha" class="form-control form-control-sm shadow-none" aria-describedby="inp-url-fecha">
+                </div>
+            </div>
+
+            <div class="modal-footer p-1">
+                <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-dark btn-sm" onclick="IrEucaristiaDiaria();">Ver lecturas</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="./lib/bootstrap/jquery/jquery.slim.min.js"></script>
+<script src="./lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="./assets/js/script.js"></script>
+<script src="./lib/sweetalert2@11.js"></script>
+<script src="./lib/jsPDF/jspdf.debug.js"></script>
+<script src="./assets/js/downloadPDF.js"></script>
+</body>
+</html>
