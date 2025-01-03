@@ -1,0 +1,44 @@
+.dg-logo {
+    width: 7rem;
+    height: 7rem;
+}
+
+.dg-formulario {
+    width: 100%;
+    max-width: 67.5rem;
+}
+
+.dg-btn-download {
+    width: 67.5rem;
+    margin: 0 auto;
+}
+
+
+@media (max-width: 768px) {
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .btn-block {
+        width: 100%;
+    }
+
+    .dg-logo {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .dg-formulario {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .dg-btn-download {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .p-3 {
+        padding: 0 !important;
+    }
+}
